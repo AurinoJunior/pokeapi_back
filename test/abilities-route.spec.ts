@@ -25,4 +25,10 @@ describe('/abilities', () => {
 
     expect(response.status).toEqual(200)
   })
+
+  it('should return 404 if it does not find the pokémon', async () => {
+    const response = await supertest(app.server).get('/pokemon/xpto/abilities')
+
+    expect(response.status).toEqual(404)
+  })
 })
