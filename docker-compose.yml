@@ -13,9 +13,3 @@ services:
     container_name: poke_api
     command: yarn dev
     env_file: .env
-    networks:
-      - poke_api_network
-
-networks:
-  poke_api_network:
-    driver: bridge

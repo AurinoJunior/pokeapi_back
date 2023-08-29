@@ -1,4 +1,4 @@
-FROM node:lts-hydrogen AS base
+FROM node:18-alpine AS base
 
 WORKDIR /app
 
@@ -10,8 +10,6 @@ FROM base AS development
 RUN yarn install
 
 EXPOSE 3333
-
-CMD ["yarn", "dev"]
 
 ## PRODUCTION STEP BUILD
 FROM base AS production
