@@ -15,9 +15,11 @@ export async function abilities(request: FastifyRequest, reply: FastifyReply) {
     `/pokemon/${name}`
   )
   const abilitiesUseCase = new AbilitiesUseCase()
-  const pokeAbilities = abilitiesUseCase.execute(data.abilities)
+  const pokeAbilities = await abilitiesUseCase.execute(data.abilities)
 
   return await reply.status(201).send({
+    name: data.name,
+    img: data.sprites.front_default,
     abilities: pokeAbilities,
   })
 }
