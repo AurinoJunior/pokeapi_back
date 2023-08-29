@@ -1,7 +1,9 @@
-import { type FastifyReply, type FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { axiosInstance } from '../lib/axios'
+
+import { type FastifyReply, type FastifyRequest } from 'fastify'
 import { type IPokemonRequestApi } from '../@types/pokemon'
+
+import { axiosInstance } from '../lib/axios'
 import { AbilitiesUseCase } from '../use-cases/abilities'
 
 export async function abilities(request: FastifyRequest, reply: FastifyReply) {
@@ -14,6 +16,7 @@ export async function abilities(request: FastifyRequest, reply: FastifyReply) {
   const { data } = await axiosInstance.get<IPokemonRequestApi>(
     `/pokemon/${name}`
   )
+
   const abilitiesUseCase = new AbilitiesUseCase()
   const pokeAbilities = await abilitiesUseCase.execute(data.abilities)
 
