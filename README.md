@@ -22,7 +22,7 @@
 
 ## :blue_book: Contexto
 
-Esse projeto consite em um middleware, que usa as informações da poke api para alimentar um frontend especifico.
+Esse projeto consite em um middleware, que usa as informações da poke api para alimentar uma aplicação frontend.
 
 ## :computer: Tecnologias
 
