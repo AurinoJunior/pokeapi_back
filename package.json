@@ -12,6 +12,7 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "dev": "tsx watch src/server.ts",
+    "lint": "eslint --max-warnings=0 src --ext .ts",
     "test:unit": "vitest run src",
     "test:integration": "vitest run test"
   },
