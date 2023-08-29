@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: .
+      target: development
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/app
+      - /app/node_modules
+    container_name: poke_api
+    command: yarn dev
+    env_file: .env
+    networks:
+      - poke_api_network
+
+networks:
+  poke_api_network:
+    driver: bridge

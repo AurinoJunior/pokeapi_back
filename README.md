@@ -33,10 +33,38 @@ Esse projeto consite em um middleware, que usa as informações da poke api para
 - vitest
 - eslint
 - zod
+- tsup
 
 ## :video_game: Iniciando o projeto
 
+Rodando com docker
+
+1. Clone a .env.example para um arquivo `cp .env.example .env`
+2. Subo o serviço com `docker-compose up`
+3. A aplicação ficará disponivel em `http://localhost:3333`
+
+Rodando com api local
+
+1. Clone a .env.example para um arquivo `cp .env.example .env`
+2. Instale as dependencias `yarn install`
+3. Suba a aplicação com `yarn dev`
+4. A aplicação ficará disponivel em `http://localhost:3333`
+
 ## :beers: Como usar
+
+A rota de healthcheck é
+
+```bash
+curl --request GET \
+  --url http://localhost:3333/healthcheck
+```
+
+Após subir o projeto use esse curl para fazer um teste simples:
+
+```bash
+curl --request GET \
+  --url http://localhost:3333/pokemon/pikachu/abilities
+```
 
 ## :page_with_curl: Licença
 

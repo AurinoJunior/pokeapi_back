@@ -5,7 +5,12 @@
   "repository": "git@github.com:AurinoJunior/pokeapi_challenge.git",
   "author": "Aurino Geraldo <aurinoaj@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
     "dev": "tsx watch src/server.ts"
   },
   "devDependencies": {
@@ -16,6 +21,7 @@
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-n": "15.0.0 || 16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
+    "tsup": "7.2.0",
     "tsx": "3.12.7",
     "typescript": "5.2.2"
   },
