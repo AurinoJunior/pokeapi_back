@@ -12,16 +12,19 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "dev": "tsx watch src/server.ts",
-    "test:unit": "vitest run"
+    "test:unit": "vitest run src",
+    "test:integration": "vitest run test"
   },
   "devDependencies": {
     "@types/node": "20.5.3",
+    "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "6.4.0",
     "eslint": "8.0.1",
     "eslint-config-standard-with-typescript": "39.0.0",
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-n": "15.0.0 || 16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
+    "supertest": "6.3.3",
     "tsup": "7.2.0",
     "tsx": "3.12.7",
     "typescript": "5.1.6",
