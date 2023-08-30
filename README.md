@@ -73,7 +73,7 @@ A hospedagem desse projeto foi feita na aws utilizando o serviço ECS, ALB com o
 
 ```bash
 curl --request GET \
-  --url http://alb-poke-api-722434757.us-east-2.elb.amazonaws.com:3333/healthcheck
+  --url https://f8usk8oit0.execute-api.us-east-2.amazonaws.com/poke-api-production/pokemon/pikachu/abilities
 ```
 
 ## :page_with_curl: Licença
