@@ -1,6 +1,6 @@
 name: ECS production deployment
 env:
-  BASE_URL: ${{ secrets.BASE_URL }}
+  BASE_API: ${{ secrets.BASE_API }}
 on:
   push:
     branches:
