@@ -4,11 +4,13 @@ import { type AxiosError } from 'axios'
 
 import { appRoutes } from './controllers/routes'
 import { InvalidPokemonError } from './controllers/error/invalid-pokemon'
+import cors from '@fastify/cors'
 
 export const app = fastify()
 
 type TCustomErrorType = AxiosError & FastifyError
 
+app.register(cors)
 app.register(appRoutes)
 app.setErrorHandler((error: TCustomErrorType, _request, reply) => {
   if (error instanceof ZodError) {

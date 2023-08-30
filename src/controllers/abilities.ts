@@ -17,7 +17,7 @@ export async function abilities(request: FastifyRequest, reply: FastifyReply) {
 
   try {
     const { data } = await axiosInstance.get<IPokemonRequestApi>(
-      `/pokemon/${name}`
+      `/pokemon/${name.toLocaleLowerCase()}`
     )
 
     const abilitiesUseCase = new AbilitiesUseCase()
