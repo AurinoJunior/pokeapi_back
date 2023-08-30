@@ -18,6 +18,7 @@
 - [Tecnologias](#computer-tecnologias)
 - [Iniciando o projeto](#video_game-iniciando-o-projeto)
 - [Como usar](#beers-como-usar)
+- [Arquitetura](#arquitetura)
 - [Licença](#page_with_curl-licença)
 
 ## :blue_book: Contexto
@@ -64,6 +65,15 @@ Após subir o projeto use esse curl para fazer um teste simples:
 ```bash
 curl --request GET \
   --url http://localhost:3333/pokemon/pikachu/abilities
+```
+
+## Arquitetura
+
+A hospedagem desse projeto foi feita na aws utilizando o serviço ECS, ALB com o cluster em fargate, a imagem do docker foi hospedada no dockerhub, abaixo está um curl, para teste em produção.
+
+```bash
+curl --request GET \
+  --url http://alb-poke-api-722434757.us-east-2.elb.amazonaws.com:3333/healthcheck
 ```
 
 ## :page_with_curl: Licença
