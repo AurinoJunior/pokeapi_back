@@ -31,3 +31,17 @@ jobs:
           aws-region: us-east-2
       - name: Get task definition
         run: aws ecs describe-task-definition --task-definition task-poke-api --query taskDefinition > task-definition.json
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: poke-api
+          image: aurigod/pokeapi:latest
+      - name: Deploy aws ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: service-poke-api
+          cluster: cluster-pokemon-api
+          wait-for-service-stability: true
