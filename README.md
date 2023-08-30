@@ -69,7 +69,7 @@ curl --request GET \
 
 ## Arquitetura
 
-A hospedagem desse projeto foi feita na aws utilizando o serviço ECS, ALB com o cluster em fargate, a imagem do docker foi hospedada no dockerhub, abaixo está um curl, para teste em produção.
+A hospedagem desse projeto foi feita na aws utilizando API Gateway, ECS, ALB com o cluster em fargate, a imagem do docker foi hospedada no dockerhub, abaixo está um curl, para teste em produção.
 
 ```bash
 curl --request GET \
